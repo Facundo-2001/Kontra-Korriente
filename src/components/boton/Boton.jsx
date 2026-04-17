@@ -6,7 +6,7 @@ const Boton = ({ texto, to, alHacerClic, tipo = "primario" }) => {
   // Si tiene la prop 'to', es un link de navegación
   if (to) {
     return (
-      <Link inventado to={to} className={`btn-generico ${tipo}`}>
+      <Link to={to} className={`btn-generico ${tipo}`}>
         {texto}
       </Link>
     );

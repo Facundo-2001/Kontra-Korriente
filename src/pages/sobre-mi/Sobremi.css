@@ -1,0 +1,34 @@
+.sobre-mi-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.sobre-mi-content {
+  background-color: var(--blanco, #ffffff);
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 800px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.sobre-mi-content h2 {
+  font-family: var(--fuente-titulo, 'Playfair Display', serif);
+  color: var(--bordeaux, #6b0d0d);
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.sobre-mi-content p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.sobre-mi-content .intro {
+  font-size: 1.4rem;
+  color: var(--bordeaux, #6b0d0d);
+}

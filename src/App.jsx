@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout.jsx';
 import Home from './pages/home/Home.jsx';
 import SobreMi from './pages/sobre-mi/Sobremi.jsx';
+import Servicios from './pages/servicios/Servicios.jsx';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} /> {/* "index" es la ruta por defecto (/) */}
           <Route path="sobre-mi" element={<SobreMi />} />
-          <Route path="servicios" element={<div>Página de Servicios</div>} />
+          <Route path="servicios" element={<Servicios />} />
         </Route>
       </Routes>
     </Router>

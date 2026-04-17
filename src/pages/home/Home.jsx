@@ -64,16 +64,12 @@ const Home = () => {
       {/* SECCIÓN RESUMEN DE SERVICIOS */}
       <section className="highlights-section">
         <div className="highlight-card">
-          <h3>Shows para Eventos</h3>
-          <p>Llevamos la magia a tu celebración, con obras adaptadas para todas las edades.</p>
-        </div>
-        <div className="highlight-card">
-          <h3>Talleres Creativos</h3>
-          <p>Aprende a construir tus propios títeres y despierta tu artista interior.</p>
+          <h3>Shows a Pedidos</h3>
+          <p>Llevo la magia a donde la necesites con obras adaptadas a tu evento o celebración.</p>
         </div>
         <div className="highlight-card destaque"> {/* Tarjeta con estilo diferente */}
-          <h3>Obras de Repertorio</h3>
-          <p>Disfruta de nuestras creaciones originales con una puesta en escena única.</p>
+          <h3>Fabricación de Títeres</h3>
+          <p>Construyo y doy vida a personajes personalizados para obras, regalos o proyectos artísticos.</p>
         </div>
       </section>
     </div>
