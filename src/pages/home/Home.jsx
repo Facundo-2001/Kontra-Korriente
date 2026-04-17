@@ -5,6 +5,9 @@ import Boton from '../../components/boton/Boton.jsx'; // Usamos tu botón reutil
 import './Home.css';
 // Importamos una imagen de fondo (Hero). Reemplaza con una real de los títeres.
 import heroImage from '../../assets/images/imagen1.jpg'; 
+import imagen2 from '../../assets/images/imagen2.jpg';
+
+
 
 const Home = () => {
   const navigate = useNavigate();
@@ -27,15 +30,15 @@ const Home = () => {
         <div className="hero-overlay"> {/* Capa oscura para legibilidad */}
           <div className="hero-content">
             <h1 className="hero-title">Kontra Korriente</h1>
-            <p className="hero-subtitle">Arte que cobra vida, historias que trascienden.</p>
+            <p className="hero-subtitle">Compañia de Titeres</p>
             <div className="hero-actions">
               <Boton 
-                texto="Ver Espectáculos" 
+                texto="Espectáculos" 
                 alHacerClic={irAServicios} 
                 tipo="primario" 
               />
               <Boton 
-                texto="Conocenos" 
+                texto="Biografia" 
                 alHacerClic={irASobreMi} 
                 tipo="secundario" 
               />
@@ -54,9 +57,7 @@ const Home = () => {
             </p>
           </div>
           <div className="intro-icon-container">
-            {/* Aquí podrías poner un icono de títere o una foto pequeña */}
-            {/* <img src={titereIcon} alt="Icono de Títere" className="intro-icon" /> */}
-            <div className="intro-icon-placeholder">🎭</div>
+            <img src={imagen2} alt="Títeres de Kontra Korriente" className="intro-image" />
           </div>
         </div>
       </section>

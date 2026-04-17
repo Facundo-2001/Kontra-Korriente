@@ -66,6 +66,17 @@
   justify-content: center;
 }
 
+/* Aclarar el botón secundario ("Conocenos") en el Hero para mayor visibilidad */
+.hero-actions .secundario {
+  background-color: var(--crema);
+  color: var(--bordeaux); /* Texto en burdeos para que haya contraste */
+  border: 2px solid var(--crema);
+}
+
+.hero-actions .secundario:hover {
+  background-color: var(--blanco);
+}
+
 /* SECCIÓN INTRODUCCIÓN ARTÍSTICA */
 .intro-section {
   padding: 80px 20px;
@@ -95,6 +106,13 @@
 .intro-icon-placeholder {
   font-size: 8rem;
   color: rgba(107, 13, 13, 0.1); /* Burdeos muy transparente */
+}
+
+.intro-image {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* SECCIÓN RESUMEN DE SERVICIOS */
