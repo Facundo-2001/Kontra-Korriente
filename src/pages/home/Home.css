@@ -1,0 +1,142 @@
+/* src/pages/Home/Home.css */
+
+/* VARIABLES DE COLOR (Si no las definiste en Layout/App.css) */
+:root {
+  --bordeaux: #6b0d0d;
+  --oro: #d4af37;
+  --crema: #fdfcf0;
+  --oscuro: #2d2d2d;
+  --blanco: #ffffff;
+  --fuente-titulo: 'Playfair Display', serif; /* O una similar de Google Fonts */
+  --fuente-cuerpo: 'Lato', sans-serif;
+}
+
+/* ESTILOS GENERALES DE LA PÁGINA */
+.home-container {
+  color: var(--oscuro);
+}
+
+/* SECCIÓN HERO (PORTADA) */
+.hero-section {
+  height: 85vh; /* Ocupa el 85% de la altura de la pantalla */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Capa oscura sobre la imagen para que el texto se lea bien */
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Negro con 50% de opacidad */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  text-align: center;
+  color: var(--blanco);
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-family: var(--fuente-titulo);
+  font-size: 4rem; /* Grande y artístico */
+  margin: 0 0 10px;
+  color: var(--oro); /* El oro resalta en la oscuridad */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para dar profundidad */
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* SECCIÓN INTRODUCCIÓN ARTÍSTICA */
+.intro-section {
+  padding: 80px 20px;
+  background-color: var(--crema);
+}
+
+.intro-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.intro-text h2 {
+  font-family: var(--fuente-titulo);
+  font-size: 2.5rem;
+  color: var(--bordeaux);
+  margin-top: 0;
+}
+
+.intro-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.intro-icon-placeholder {
+  font-size: 8rem;
+  color: rgba(107, 13, 13, 0.1); /* Burdeos muy transparente */
+}
+
+/* SECCIÓN RESUMEN DE SERVICIOS */
+.highlights-section {
+  padding: 60px 20px;
+  background-color: #eee; /* Un gris muy claro de fondo */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.highlight-card {
+  background-color: var(--blanco);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.highlight-card:hover {
+  transform: translateY(-5px);
+}
+
+.highlight-card h3 {
+  font-family: var(--fuente-titulo);
+  color: var(--bordeaux);
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+/* Estilo para la tarjeta destacada */
+.highlight-card.destaque {
+  border: 2px solid var(--oro);
+  background-color: #fffaf0; /* Un blanco más crema */
+}
+
+/* RESPONSIVE DESIGN (Básico) */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.5rem; }
+  .hero-subtitle { font-size: 1.2rem; }
+  .hero-actions { flex-direction: column; gap: 10px; }
+  .intro-wrapper { flex-direction: column-reverse; text-align: center; }
+}
