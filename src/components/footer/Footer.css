@@ -1,8 +1,8 @@
 .main-footer {
-  background-color: #1a1c22;
-  color: #ffffff;
+  background-color: var(--fondo-secundario);
+  color: var(--texto-principal);
   padding: 2rem 0;
-  border-top: 2px solid #61dafb;
+  border-top: 2px solid var(--oro);
   margin-top: auto; /* Empuja el footer hacia abajo si usas flexbox en el contenedor padre */
 }
 
@@ -27,14 +27,15 @@
 }
 
 .footer-social a {
-  color: #61dafb;
+  color: var(--oro);
   text-decoration: none;
   font-size: 0.9rem;
-  transition: opacity 0.3s;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .footer-social a:hover {
-  opacity: 0.7;
+  color: var(--bordeaux);
+  transform: translateY(-3px);
 }
 
 .footer-icon {

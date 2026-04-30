@@ -26,6 +26,7 @@ body {
   color: var(--texto-principal);
 }
 
+
 .layout-content {
   max-width: 100%; /* Ahora ocupará todo el ancho disponible */
   margin: 0 auto;
