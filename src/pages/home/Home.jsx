@@ -3,11 +3,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Para navegar programáticamente
 import Boton from '../../components/boton/Boton.jsx'; // Usamos tu botón reutilizable
 import './Home.css';
-// Importamos una imagen de fondo (Hero). Reemplaza con una real de los títeres.
-import heroImage from '../../assets/images/imagen1.jpg'; 
+import Fondo from '../../assets/images/imagen1.jpg'; // Importamos el logo para el fondo
 import imagen2 from '../../assets/images/imagen2.jpg';
-
-
 
 const Home = () => {
   const navigate = useNavigate();
@@ -25,27 +22,24 @@ const Home = () => {
       {/* SECCIÓN HERO (PORTADA) */}
       <header 
         className="hero-section" 
-        style={{ backgroundImage: `url(${heroImage})` }} // Fondo dinámico
-      >
-        <div className="hero-overlay"> {/* Capa oscura para legibilidad */}
-          <div className="hero-content">
-            <h1 className="hero-title">Kontra Korriente</h1>
-            <p className="hero-subtitle">Compañia de Titeres</p>
-            <div className="hero-actions">
-              <Boton 
-                texto="Espectáculos" 
-                alHacerClic={irAServicios} 
-                tipo="primario" 
-              />
-              <Boton 
-                texto="Biografia" 
-                alHacerClic={irASobreMi} 
-                tipo="secundario" 
-              />
-            </div>
-          </div>
+        style={{ backgroundImage: `url(${Fondo})` }} // Logo como imagen de fondo
+      />
+
+      {/* BOTONES DE ACCIÓN (Movidos debajo de la imagen principal) */}
+      <div className="hero-actions-container">
+        <div className="hero-actions">
+          <Boton 
+            texto="Servicios" 
+            alHacerClic={irAServicios} 
+            tipo="primario" 
+          />
+          <Boton 
+            texto="Biografia" 
+            alHacerClic={irASobreMi} 
+            tipo="secundario" 
+          />
         </div>
-      </header>
+      </div>
 
       {/* SECCIÓN INTRODUCCIÓN ARTÍSTICA */}
       <section className="intro-section">
@@ -62,19 +56,9 @@ const Home = () => {
         </div>
       </section>
 
-      {/* SECCIÓN RESUMEN DE SERVICIOS */}
-      <section className="highlights-section">
-        <div className="highlight-card">
-          <h3>Shows a Pedidos</h3>
-          <p>Llevo la magia a donde la necesites con obras adaptadas a tu evento o celebración.</p>
-        </div>
-        <div className="highlight-card destaque"> {/* Tarjeta con estilo diferente */}
-          <h3>Fabricación de Títeres</h3>
-          <p>Construyo y doy vida a personajes personalizados para obras, regalos o proyectos artísticos.</p>
-        </div>
-      </section>
+     
     </div>
   );
 };
 
-export default Home;
+export default Home;                                                                

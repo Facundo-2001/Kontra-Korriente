@@ -1,27 +1,30 @@
-/* src/pages/Home/Home.css */
-
-/* VARIABLES DE COLOR (Si no las definiste en Layout/App.css) */
-:root {
-  --bordeaux: #6b0d0d;
-  --oro: #d4af37;
-  --crema: #fdfcf0;
-  --oscuro: #2d2d2d;
-  --blanco: #ffffff;
-  --fuente-titulo: 'Playfair Display', serif; /* O una similar de Google Fonts */
-  --fuente-cuerpo: 'Lato', sans-serif;
+/* DEFINICIÓN DE ANIMACIONES */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
 }
 
 /* ESTILOS GENERALES DE LA PÁGINA */
 .home-container {
-  color: var(--oscuro);
+  color: var(--texto-principal);
 }
 
 /* SECCIÓN HERO (PORTADA) */
 .hero-section {
-  height: 85vh; /* Ocupa el 85% de la altura de la pantalla */
-  background-size: cover;
+  height: 79vh; /* Ocupa el 79% de la altura de la pantalla */
+  background-size: contain; /* Cambiado a contain para que el logo no se recorte */
   background-position: center;
   background-repeat: no-repeat;
+  background-color: var(--fondo-principal); /* Fondo oscuro detrás del logo */
   position: relative;
   display: flex;
   justify-content: center;
@@ -43,6 +46,7 @@
   color: var(--blanco);
   max-width: 800px;
   padding: 0 20px;
+  animation: fadeIn 1.5s ease-out; /* Aparece suavemente */
 }
 
 .hero-title {
@@ -51,6 +55,7 @@
   margin: 0 0 10px;
   color: var(--oro); /* El oro resalta en la oscuridad */
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para dar profundidad */
+  animation: fadeUp 1s ease-out 0.3s backwards; /* Animación de entrada al título */
 }
 
 .hero-subtitle {
@@ -66,29 +71,42 @@
   justify-content: center;
 }
 
-/* Aclarar el botón secundario ("Conocenos") en el Hero para mayor visibilidad */
+/* Contenedor de los botones debajo de la imagen */
+.hero-actions-container {
+  background-color: var(--fondo-principal);
+  padding: 40px 20px 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Adaptar el botón secundario ahora que está sobre fondo claro */
 .hero-actions .secundario {
-  background-color: var(--crema);
-  color: var(--bordeaux); /* Texto en burdeos para que haya contraste */
-  border: 2px solid var(--crema);
+  background-color: transparent; /* Fondo transparente */
+  color: var(--oro); /* Texto dorado */
+  border: 2px solid var(--oro); /* Borde dorado */
 }
 
 .hero-actions .secundario:hover {
-  background-color: var(--blanco);
+  background-color: var(--oro);
+  color: var(--blanco);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(107, 13, 13, 0.3);
 }
 
 /* SECCIÓN INTRODUCCIÓN ARTÍSTICA */
 .intro-section {
   padding: 80px 20px;
-  background-color: var(--crema);
+  background-color: var(--fondo-principal);
 }
 
 .intro-wrapper {
-  max-width: 1000px;
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   gap: 40px;
+  animation: fadeUp 1.2s ease-out backwards;
+  animation-delay: 0.3s;
 }
 
 .intro-text h2 {
@@ -113,29 +131,48 @@
   max-width: 350px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  animation: float 6s ease-in-out infinite; /* Efecto flotante constante */
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.intro-image:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 15px 25px rgba(107, 13, 13, 0.2);
+  animation-play-state: paused; /* Pausa el efecto de flotar al pasar el ratón */
 }
 
 /* SECCIÓN RESUMEN DE SERVICIOS */
 .highlights-section {
   padding: 60px 20px;
-  background-color: #eee; /* Un gris muy claro de fondo */
+  background-color: var(--fondo-secundario); /* Fondo gris oscuro */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  max-width: 1100px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
 .highlight-card {
-  background-color: var(--blanco);
+  background-color: var(--fondo-principal);
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  transition: transform 0.3s;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeUp 1s ease-out backwards;
+}
+
+/* Retrasos escalonados para que aparezcan una tras otra */
+.highlights-section .highlight-card:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.highlights-section .highlight-card:nth-child(2) {
+  animation-delay: 0.7s;
 }
 
 .highlight-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
 .highlight-card h3 {
@@ -148,13 +185,27 @@
 /* Estilo para la tarjeta destacada */
 .highlight-card.destaque {
   border: 2px solid var(--oro);
-  background-color: #fffaf0; /* Un blanco más crema */
+  background-color: #25221b; /* Un fondo oscuro con un tinte dorado */
 }
 
 /* RESPONSIVE DESIGN (Básico) */
 @media (max-width: 768px) {
   .hero-title { font-size: 2.5rem; }
   .hero-subtitle { font-size: 1.2rem; }
-  .hero-actions { flex-direction: column; gap: 10px; }
-  .intro-wrapper { flex-direction: column-reverse; text-align: center; }
+  .hero-section { height: 50vh; } /* Reduce la altura gigante de la portada */
+  .hero-actions-container { padding: 20px 15px 0 15px; } /* Menos aire arriba de los botones */
+  .hero-actions { flex-direction: column; gap: 15px; width: 100%; }
+  
+  .intro-section { padding: 40px 15px; } /* Reducido de 80px a 40px */
+  .intro-wrapper { flex-direction: column-reverse; text-align: center; gap: 20px; }
+  .highlights-section { padding: 40px 15px; gap: 20px; } /* Tarjetas más compactas */
+
+  /* Ajuste para los botones en la sección hero */
+  .hero-actions .primario,
+  .hero-actions .secundario {
+    padding: 12px 15px; /* Reducimos el padding para que no sean tan anchos */
+    font-size: 1.1rem; /* Ajustamos el tamaño de la fuente para móvil */
+    width: 90%; /* Hacemos que ocupen el ancho completo de su contenedor */
+    box-sizing: border-box; /* Para que el padding no incremente el tamaño total */
+  }
 }

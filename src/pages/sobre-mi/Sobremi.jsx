@@ -1,9 +1,10 @@
 import React from 'react';
 import './Sobremi.css';
+import imagen1 from '../../assets/images/imagen1.jpg';
 
 const SobreMi = () => {
   return (
-    <div className="sobre-mi-container">
+    <div className="sobre-mi-container" style={{ backgroundImage: `url(${imagen1})` }}>
       <div className="sobre-mi-content">
         <h2>Sobre Mí</h2>
         <p className="intro">

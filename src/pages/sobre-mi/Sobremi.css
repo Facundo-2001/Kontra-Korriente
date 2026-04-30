@@ -1,17 +1,28 @@
+@keyframes revealBox {
+  from { opacity: 0; transform: scale(0.95) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
 .sobre-mi-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
+  padding: 80px 20px;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .sobre-mi-content {
-  background-color: var(--blanco, #ffffff);
+  background-color: rgba(30, 30, 30, 0.85); /* Fondo oscuro semi-transparente */
+  backdrop-filter: blur(8px); /* Efecto vidrio esmerilado moderno */
   padding: 40px;
   border-radius: 10px;
   max-width: 800px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   text-align: center;
+  animation: revealBox 1s ease-out;
 }
 
 .sobre-mi-content h2 {
@@ -31,4 +42,12 @@
 .sobre-mi-content .intro {
   font-size: 1.4rem;
   color: var(--bordeaux, #6b0d0d);
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+  .sobre-mi-container { padding: 40px 15px; }
+  .sobre-mi-content { padding: 25px 20px; }
+  .sobre-mi-content h2 { font-size: 2rem; }
+  .sobre-mi-content p { font-size: 1.05rem; line-height: 1.6; }
 }
