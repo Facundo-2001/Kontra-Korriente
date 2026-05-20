@@ -13,7 +13,7 @@ const Nav = () => {
           <Link to="/sobre-mi">Sobre Mí</Link>
         </li>
         <li className="nav-item">
-          <Link to="/servicios">Servicios</Link>
+          <Link to="/servicios">Teatro de titeres y objetos</Link>
         </li>
       </ul>
     </nav>

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Sobremi.css';
-import imagen1 from '../../assets/images/imagen1.jpg';
+import imagen1 from '../../assets/images/bio.jpg';
 
 const SobreMi = () => {
   return (

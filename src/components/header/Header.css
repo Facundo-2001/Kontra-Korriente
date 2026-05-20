@@ -1,6 +1,9 @@
 .main-header {
   background-color: var(--fondo-secundario); /* Usamos el gris oscuro de la paleta */
-  height: 100px; /* Header ajustado al logo  */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 120px; /* Header un poco más alto para dar espacio al logo */
   padding: 0 10%;
   display: flex;
   justify-content: space-between;
@@ -12,9 +15,9 @@
   transition: all 0.3s ease;
 }
 
-/* Asegurar que los enlaces del menú de navegación sean negros */
+/* Asegurar que los enlaces del menú de navegación sean de color rojo oscuro */
 .main-header a:not(.header-logo) {
-  color: var(--texto-principal) !important;
+  color: var(--bordeaux, #6b0d0d) !important;
   font-size: 1.2rem; /* Aumenta el tamaño de la fuente de los enlaces */
   transition: color 0.3s ease, transform 0.3s ease;
   display: inline-block;
@@ -44,15 +47,16 @@
 
 /* Estilo para la imagen del logo */
 .header-logo-img {
-  max-height: 120px;
+  max-height: 120px; /* Aumentamos el tamaño del logo */
   width: auto;
   object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.15)) brightness(1.1); /* Ligero resplandor para separarlo del fondo */
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .header-logo-img:hover {
   transform: scale(1.05) rotate(-2deg);
-  filter: brightness(1.1);
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.6)) brightness(1.2); /* Resplandor dorado al pasar el cursor */
 }
 
 /* Opcional: Asegura que el contenedor del logo esté bien centrado verticalmente */
@@ -66,6 +70,9 @@
 .nav-container {
   display: flex;
   align-items: center;
+  position: absolute; /* Separa la navegación del logo */
+  left: 50%; /* La mueve al centro geométrico de la pantalla */
+  transform: translateX(-50%); /* Ajuste fino para centrarla perfectamente */
 }
 
 /* Estilos del botón hamburguesa (Oculto en PC) */
@@ -81,10 +88,11 @@
 
 .hamburger-menu span {
   display: block;
-  height: 3px;
+  height: 4px; /* Aumentamos el grosor de las líneas */
   width: 100%;
-  background-color: var(--texto-principal);
-  border-radius: 3px;
+  background-color: var(--oro);
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.8); /* Sombra oscura para separarlo de la imagen de fondo */
   transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
 }
 
@@ -113,30 +121,35 @@
 
   .nav-container {
     position: absolute;
-    top: 100px; /* Queda justo debajo del header de 100px */
-    left: -100%; /* Menú oculto fuera de la pantalla por la izquierda */
-    width: 100%;
-    height: calc(100vh - 100px); /* Ocupa el resto de la altura de la pantalla */
+    top: 120px; /* Queda justo debajo del header de 120px */
+    right: -100%; /* Menú oculto fuera de la pantalla por la derecha */
+    left: auto; /* Reiniciamos el centrado de PC para el celular */
+    transform: none; /* Reiniciamos el centrado de PC para el celular */
+    width: 250px; /* Solo ocupa un costado de la pantalla */
+    height: calc(100vh - 120px); /* Ocupa el resto de la altura de la pantalla */
     background-color: var(--fondo-secundario); /* Gris oscuro */
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 30px; /* Reducimos el espacio vacío superior del menú */
-    transition: left 0.4s ease;
-    box-shadow: inset -5px 0 10px rgba(0,0,0,0.1);
+    transition: right 0.4s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5); /* Sombra para separarlo del contenido de fondo */
   }
 
   /* La clase open empuja el menú a la vista */
   .nav-container.open {
-    left: 0; 
+    right: 0; 
   }
 
   /* Forzamos a que los enlaces dentro del Nav se apilen y se separen bien en móvil */
-  .nav-container > * {
+  .nav-container > *,
+  .nav-container ul {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 25px; /* Acercamos los enlaces de navegación */
     width: 100%;
+    padding: 0; /* Quitamos el padding por defecto si es una lista */
+    margin: 0;
   }
   
   .main-header a:not(.header-logo) {

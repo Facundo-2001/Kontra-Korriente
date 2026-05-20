@@ -16,15 +16,18 @@
 /* ESTILOS GENERALES DE LA PÁGINA */
 .home-container {
   color: var(--texto-principal);
+  width: 100vw; /* Fuerza al contenedor a medir el 100% de la ventana */
+  margin-left: calc(50% - 50vw); /* Truco para ignorar el padding del padre y pegar el fondo al borde */
+  background-size: cover; /* Hace que el fondo ocupe todo el espacio libre */
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Mantiene la imagen estática al hacer scroll */
+  background-color: var(--fondo-principal);
 }
 
 /* SECCIÓN HERO (PORTADA) */
 .hero-section {
   height: 79vh; /* Ocupa el 79% de la altura de la pantalla */
-  background-size: contain; /* Cambiado a contain para que el logo no se recorte */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: var(--fondo-principal); /* Fondo oscuro detrás del logo */
   position: relative;
   display: flex;
   justify-content: center;
@@ -52,6 +55,7 @@
 .hero-title {
   font-family: var(--fuente-titulo);
   font-size: 4rem; /* Grande y artístico */
+  line-height: 1.2; /* Evita que las líneas de texto se superpongan */
   margin: 0 0 10px;
   color: var(--oro); /* El oro resalta en la oscuridad */
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para dar profundidad */
@@ -73,7 +77,7 @@
 
 /* Contenedor de los botones debajo de la imagen */
 .hero-actions-container {
-  background-color: var(--fondo-principal);
+  background-color: transparent;
   padding: 40px 20px 0 20px;
   display: flex;
   justify-content: center;
@@ -94,19 +98,45 @@
 }
 
 /* SECCIÓN INTRODUCCIÓN ARTÍSTICA */
+
+.home-image {
+  width: 100%;
+  max-width: 300px;
+  height: 250px; /* Para que todas tengan la misma altura y se vean como una galería prolija */
+  object-fit: cover; /* Recorta la imagen sin deformarla para que encaje en el cuadro */
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  margin: 15px; /* Crea separación entre las imágenes */
+  border: 2px solid var(--oro); /* Un delicado marco dorado */
+  display: inline-block; /* Permite que se acomoden una al lado de la otra */
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.home-image:hover {
+  transform: translateY(-10px) scale(1.05); /* Hace que la imagen "flote" hacia arriba y se acerque */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Sombra más oscura para dar profundidad */
+  border-color: var(--bordeaux); /* El marco cambia a color burdeos */
+}
+
 .intro-section {
   padding: 80px 20px;
-  background-color: var(--fondo-principal);
+  background-color: rgba(26, 26, 26, 0.7); /* Fondo semi-transparente para ver la imagen de fondo */
 }
 
 .intro-wrapper {
-  max-width: 100%;
+  max-width: 1200px; /* Limita el ancho del contenido para que quede prolijo en monitores grandes */
   margin: 0 auto;
   display: flex;
   align-items: center;
+  justify-content: center; /* Centra el bloque de texto e imágenes dentro de la pantalla */
   gap: 40px;
   animation: fadeUp 1.2s ease-out backwards;
   animation-delay: 0.3s;
+}
+
+.intro-text {
+  text-align: center;
+  width: 100%; /* Asegura que respete el espacio del contenedor central */
 }
 
 .intro-text h2 {
@@ -126,40 +156,7 @@
   color: rgba(107, 13, 13, 0.1); /* Burdeos muy transparente */
 }
 
-.intro-image {
-  width: 100%;
-  max-width: 350px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  animation: float 6s ease-in-out infinite; /* Efecto flotante constante */
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
 
-.intro-image:hover {
-  transform: scale(1.05) rotate(2deg);
-  box-shadow: 0 15px 25px rgba(107, 13, 13, 0.2);
-  animation-play-state: paused; /* Pausa el efecto de flotar al pasar el ratón */
-}
-
-/* SECCIÓN RESUMEN DE SERVICIOS */
-.highlights-section {
-  padding: 60px 20px;
-  background-color: var(--fondo-secundario); /* Fondo gris oscuro */
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.highlight-card {
-  background-color: var(--fondo-principal);
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  animation: fadeUp 1s ease-out backwards;
-}
 
 /* Retrasos escalonados para que aparezcan una tras otra */
 .highlights-section .highlight-card:nth-child(1) {
@@ -188,12 +185,12 @@
   background-color: #25221b; /* Un fondo oscuro con un tinte dorado */
 }
 
+
 /* RESPONSIVE DESIGN (Básico) */
 @media (max-width: 768px) {
   .hero-title { font-size: 2.5rem; }
   .hero-subtitle { font-size: 1.2rem; }
   .hero-section { height: 50vh; } /* Reduce la altura gigante de la portada */
-  .hero-actions-container { padding: 20px 15px 0 15px; } /* Menos aire arriba de los botones */
   .hero-actions { flex-direction: column; gap: 15px; width: 100%; }
   
   .intro-section { padding: 40px 15px; } /* Reducido de 80px a 40px */
@@ -203,8 +200,8 @@
   /* Ajuste para los botones en la sección hero */
   .hero-actions .primario,
   .hero-actions .secundario {
-    padding: 12px 15px; /* Reducimos el padding para que no sean tan anchos */
-    font-size: 1.1rem; /* Ajustamos el tamaño de la fuente para móvil */
+    padding: 15px 20px; /* Reducimos un poco el padding pero mantienen un buen tamaño */
+    font-size: 1.2rem; /* Ajustamos el tamaño de la fuente para móvil */
     width: 90%; /* Hacemos que ocupen el ancho completo de su contenedor */
     box-sizing: border-box; /* Para que el padding no incremente el tamaño total */
   }

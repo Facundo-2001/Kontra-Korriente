@@ -72,6 +72,54 @@
   font-size: 1.05rem;
 }
 
+.titeres-image{
+  width: 100%;
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  margin: 20px 0; /* Sin márgenes a los lados para que ocupe todo el ancho */
+  display: block; /* Se comporta como un bloque completo */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.titeres-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.show-image {
+  width: 100%;
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  margin: 20px 0; /* Sin márgenes a los lados */
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.show-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.seminarios-image{
+  width: 100%;
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  margin: 20px 0; /* Sin márgenes a los lados para que ocupe todo el ancho */
+  display: block; /* Se comporta como un bloque completo */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seminarios-image:hover{
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
 /* RESPONSIVE MOBILE */
 @media (max-width: 768px) {
   .servicios-container { padding: 20px 15px; }

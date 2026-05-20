@@ -1,8 +1,14 @@
 .main-footer {
   background-color: var(--fondo-secundario);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
   color: var(--texto-principal);
+  padding: 40px 20px;
+  color: var(--bordeaux);
   padding: 2rem 0;
-  border-top: 2px solid var(--oro);
+  border-top: 2px solid var(--bordeaux);
   margin-top: auto; /* Empuja el footer hacia abajo si usas flexbox en el contenedor padre */
 }
 
@@ -17,8 +23,10 @@
 
 .footer-copyright {
   margin: 0;
-  font-size: 0.9rem;
-  opacity: 0.8;
+  font-size: 1.2rem;
+  font-weight: bold; /* Hace el texto más grueso */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9); /* Crea un borde/sombra oscuro alrededor del texto */
+  opacity: 1; /* Corregimos la opacidad al 100% visible */
 }
 
 .footer-social {
@@ -27,7 +35,7 @@
 }
 
 .footer-social a {
-  color: var(--oro);
+  color: var(--bordeaux);
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.3s ease, transform 0.3s ease;
@@ -39,8 +47,8 @@
 }
 
 .footer-icon {
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
   fill: none;
   stroke: currentColor;
   stroke-width: 2px;

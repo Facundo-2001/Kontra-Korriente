@@ -11,12 +11,12 @@
 }
 
 .nav-item a {
-  color: white;
+  color: var(--bordeaux, #6b0d0d);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .nav-item a:hover {
-  color: #61dafb; /* Un celeste estilo React */
+  color: var(--oro, #d4af37);
 }

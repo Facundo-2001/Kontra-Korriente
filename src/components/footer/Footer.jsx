@@ -1,16 +1,23 @@
 import React from 'react';
 import './Footer.css';
+import FondoFooter from '../../assets/images/FondoNav.png';
 
 const Footer = () => {
   const anioActual = new Date().getFullYear();
 
   return (
-    <footer className="main-footer">
+    <footer className="main-footer" style={{ backgroundImage: `url(${FondoFooter})` }}>
       <div className="footer-content">
         <p className="footer-copyright">
           &copy; {anioActual} - Kontra Korriente todos los derechos reservados.
         </p>
         <div className="footer-social">
+          <a href="mailto:kontrakorriente.titeres@gmail.com" target="_blank" rel="noreferrer" title="Enviar Email a Kontra Korriente" aria-label="Gmail">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="footer-icon">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
           <a href="https://wa.me/5491138660143" target="_blank" rel="noreferrer" title="WhatsApp" aria-label="WhatsApp">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="footer-icon">
               <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
