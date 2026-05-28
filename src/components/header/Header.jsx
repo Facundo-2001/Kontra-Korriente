@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Nav from '../nav/Nav.jsx'; // Importamos el componente Nav
 import './Header.css';
-import logoHeader from '../../assets/logos/LogoHeader.png';
-import FondoNav from '../../assets/images/FondoNav.png';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -26,9 +24,9 @@ const Header = () => {
   };
 
   return (
-    <header className="main-header" style={{ backgroundImage: `url(${FondoNav})` }}>
+    <header className="main-header" style={{ backgroundImage: `url('/images/FondoNav.png')` }}>
       <div className="header-logo" onClick={irAlInicio} style={{ cursor: 'pointer' }}>
-        <img src={logoHeader} alt="Kontra Korriente Logo" className="header-logo-img" />
+        <img src="/logos/LogoHeader.png" alt="Kontra Korriente Logo" className="header-logo-img" />
       </div>
 
       {/* Botón Hamburguesa (solo visible en móviles por CSS) */}

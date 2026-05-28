@@ -1,10 +1,14 @@
 import React from 'react';
 import './Sobremi.css';
-import imagen1 from '../../assets/images/bio.jpg';
+import Boton from '../../components/boton/Boton';
+
+ const irAContacto = () => {
+    window.open('https://wa.me/5491138660143', '_blank', 'noopener,noreferrer');
+  };
 
 const SobreMi = () => {
   return (
-    <div className="sobre-mi-container" style={{ backgroundImage: `url(${imagen1})` }}>
+    <div className="sobre-mi-container" style={{ backgroundImage: 'url(/images/bio.jpg)' }}>
       <div className="sobre-mi-content">
         <h2>Sobre Mí</h2>
         <p className="intro">
@@ -16,6 +20,12 @@ const SobreMi = () => {
         <p>
           Trabajo en diferentes organizaciones de genero ofreciendo talleres de teatro como en M.A.L Movimiento Antidiscriminatorio por la Liberación en el año 2019 en Laferrere y Taller de Teatro en la organización Identidad Diversa con victimas de violencia de genero en el año 2020 en González Catan. Construyo una caja de Teatro Lambe Lambe en espacios públicos y teatros 2021 llamada Marichiweu. Construcción de títeres para docentes y escenografía para la obra “La farolera” 2022. Ofrecio talleres de títeres y juegos teatrales en el Instituto de Formación docente 82 articulando con el primer año de la carrera de psicología año 2022. Actualmente en constante formacion y realizacion de titeres y escenografias, talleres y seminarios con respecto al teatro como expresion artistica y recurso aulico.
         </p>
+        <p> </p>
+        <Boton 
+            texto="Contactame" 
+            alHacerClic={irAContacto} 
+            tipo="primario" 
+        />
       </div>
     </div>
   );

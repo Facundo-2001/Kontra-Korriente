@@ -3,10 +3,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Para navegar programáticamente
 import Boton from '../../components/boton/Boton.jsx'; // Usamos tu botón reutilizable
 import './Home.css';
-import Fondo from '../../assets/images/fondo.jpg'; // Importamos el logo para el fondo
-import home1 from '../../assets/images/home1.jpg';
-import home2 from '../../assets/images/home2.jpg';
-import home3 from '../../assets/images/home3.jpg';
 
 
 const Home = () => {
@@ -20,8 +16,13 @@ const Home = () => {
     navigate('/sobre-mi');
   };
 
+  const irAContacto = () => {
+    window.open('https://wa.me/5491138660143', '_blank', 'noopener,noreferrer');
+  };
+
+
   return (
-    <div className="home-container" style={{ backgroundImage: `url(${Fondo})` }}>
+    <div className="home-container" style={{ backgroundImage: `url('/images/fondo.jpg')` }}>
       {/* SECCIÓN HERO (PORTADA) */}
       <header 
         className="hero-section" 
@@ -57,10 +58,16 @@ const Home = () => {
               <br /><br />
               Además de la realización en el taller, brindo funciones para todo tipo de eventos y dicto seminarios especializados en construcción y teatro Lambe Lambe, compartiendo la magia de este antiguo y fascinante oficio.
             </p>
-            <img src={home1} alt="home1" className="home-image"/>
-            <img src={home2} alt="home2" className="home-image"/>
-            <img src={home3} alt="home3" className="home-image"/>
-          </div>
+            <img src="/images/home1.jpg" alt="home1" className="home-image"/>
+            <img src="/images/home2.jpg" alt="home2" className="home-image"/>
+            <img src="/images/home3.jpg" alt="home3" className="home-image"/>
+            <p> </p>
+            <Boton 
+            texto="Contactame" 
+            alHacerClic={irAContacto} 
+            tipo="primario" 
+          />
+          </div> 
         </div>
       </section>
     
