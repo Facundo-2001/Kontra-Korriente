@@ -5,7 +5,7 @@ const Footer = () => {
   const anioActual = new Date().getFullYear();
 
   return (
-    <footer className="main-footer" style={{ backgroundImage: `url(/images/FondoNav.png)` }}>
+    <footer className="main-footer">
       <div className="footer-content">
         <p className="footer-copyright">
           &copy; {anioActual} - Kontra Korriente todos los derechos reservados.

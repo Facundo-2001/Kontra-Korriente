@@ -34,6 +34,31 @@
   align-items: center;
 }
 
+/* Contenedor del carrusel para que funcione como fondo */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+   /* Detrás del overlay pero encima del contenedor padre */
+}
+
+/* Sobrescribimos el carrusel genérico para que ocupe todo sin bordes */
+.hero-background .carrusel-container {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+/* Ocultamos los puntitos cuando el carrusel actúa de fondo general */
+.hero-background .carrusel-indicadores {
+  display: none;
+}
+
 /* Capa oscura sobre la imagen para que el texto se lea bien */
 .hero-overlay {
   position: absolute;
@@ -42,6 +67,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2; /* Para que quede por encima del carrusel */
 }
 
 .hero-content {

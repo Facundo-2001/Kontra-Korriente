@@ -24,7 +24,7 @@ const Header = () => {
   };
 
   return (
-    <header className="main-header" style={{ backgroundImage: `url('/images/FondoNav.png')` }}>
+    <header className="main-header">
       <div className="header-logo" onClick={irAlInicio} style={{ cursor: 'pointer' }}>
         <img src="/logos/LogoHeader.png" alt="Kontra Korriente Logo" className="header-logo-img" />
       </div>

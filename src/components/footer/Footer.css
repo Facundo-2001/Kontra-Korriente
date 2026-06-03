@@ -1,5 +1,5 @@
 .main-footer {
-  background-color: var(--fondo-secundario);
+  background-color: transparent;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -8,7 +8,7 @@
   padding: 40px 20px;
   color: var(--bordeaux);
   padding: 2rem 0;
-  border-top: 2px solid var(--bordeaux);
+  border-top: none;
   margin-top: auto; /* Empuja el footer hacia abajo si usas flexbox en el contenedor padre */
 }
 

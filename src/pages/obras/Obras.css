@@ -1,0 +1,48 @@
+/* Contenedor principal de Obras */
+.obras-container {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--texto-principal, #fff);
+}
+
+/* Título de la página */
+.obras-container h1 {
+  font-family: var(--fuente-titulo, 'Playfair Display', serif);
+  color: var(--oro, #d4af37);
+  font-size: 3rem;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilo de galería para las imágenes de las obras */
+.obras-img {
+  width: 100%;
+  max-width: 350px;
+  height: 250px; /* Mantiene todas las imágenes del mismo tamaño creando una grilla prolija */
+  object-fit: cover; /* Evita que las fotos se deformen */
+  object-position: center;
+  margin: 15px;
+  border-radius: 10px;
+  border: 2px solid var(--oro, #d4af37);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  display: inline-block; /* Permite que se acomoden una al lado de la otra automáticamente */
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+/* Efecto hover (al pasar el mouse por encima) */
+.obras-img:hover {
+  transform: translateY(-10px) scale(1.05); /* La imagen se acerca y "flota" hacia arriba */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
+  border-color: var(--bordeaux, #6b0d0d); /* El marco dorado se vuelve color bordeaux */
+}
+
+/* Contenedor para el botón de volver */
+.volver-btn-container {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
