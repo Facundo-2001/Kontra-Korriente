@@ -68,40 +68,26 @@
 
 /* --- CONTENEDOR DE NAVEGACIÓN Y HAMBURGUESA --- */
 .nav-container {
-  position: absolute;
-  top: 120px; /* Queda justo debajo del header de 120px */
-  right: -100%; /* Menú oculto fuera de la pantalla por la derecha */
-  width: 250px;
-  height: calc(100vh - 120px); /* Ocupa el resto de la altura de la pantalla */
-  background-color: transparent; /* Fondo transparente como solicitaste */
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding-top: 30px;
+  align-items: center;
   transition: right 0.4s ease;
-  box-shadow: none; /* Sin sombra para integrarse por completo */
-}
-
-/* La clase open empuja el menú a la vista */
-.nav-container.open {
-  right: 0; 
 }
 
 /* Forzamos a que los enlaces dentro del Nav se apilen y se separen bien */
 .nav-container > *,
 .nav-container ul {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 25px; /* Acercamos los enlaces de navegación */
-  width: 100%;
+  width: auto;
   padding: 0;
   margin: 0;
 }
 
-/* Estilos del botón hamburguesa (Visible en todas las resoluciones) */
+/* Estilos del botón hamburguesa */
 .hamburger-menu {
-  display: flex;
+  display: none; /* Oculto en escritorio */
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
@@ -141,5 +127,32 @@
 
   .main-header a:not(.header-logo) {
     font-size: 1.5rem; /* Letras un poco más grandes para poder tocarlas fácil con el dedo */
+  }
+
+  .hamburger-menu {
+    display: flex; /* Visible en móviles */
+  }
+
+  .nav-container {
+    position: fixed; /* Se fija por encima del contenido sin empujarlo */
+    top: 120px; /* Queda justo debajo del header de 120px */
+    right: -100%; /* Menú oculto fuera de la pantalla por la derecha */
+    width: 250px;
+    height: calc(100vh - 120px); /* Ocupa el resto de la altura de la pantalla */
+    background-color: rgba(18, 18, 18, 0.95); /* Fondo oscuro para que se vea por encima del contenido */
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 30px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5); /* Sombra para resaltar sobre el contenido */
+  }
+
+  /* La clase open empuja el menú a la vista */
+  .nav-container.open {
+    right: 0; 
+  }
+
+  .nav-container > *,
+  .nav-container ul {
+    flex-direction: column;
   }
 }
