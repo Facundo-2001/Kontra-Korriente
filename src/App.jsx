@@ -3,7 +3,7 @@ import Layout from './components/layout/Layout.jsx';
 import Home from './pages/home/Home.jsx';
 import SobreMi from './pages/sobre-mi/Sobremi.jsx';
 import Servicios from './pages/servicios/Servicios.jsx';
-import Titeres from './pages/titeres/titeres.jsx';
+import Titeres from './pages/titeres/Titeres.jsx';
 import Obras from './pages/obras/Obras.jsx';
 import Seminarios from './pages/seminarios/Seminarios.jsx';
 import Contacto from './pages/contacto/Contacto.jsx';
