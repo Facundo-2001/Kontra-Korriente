@@ -1,5 +1,9 @@
 /* Contenedor principal de Títeres */
 .titeres-container {
+  background-image: url('/images/fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 60px 20px;
   max-width: 1200px;
   margin: 0 auto;
@@ -31,7 +35,7 @@
   width: 100%;
   max-width: 350px;
   height: 250px; /* Asegura que todas las fotos tengan la misma altura */
-  object-fit: cover; /* Evita que las fotos de los títeres se deformen */
+  object-fit: contain; /* Evita que las fotos de los títeres se deformen */
   object-position: center;
   margin: 15px;
   border-radius: 10px;

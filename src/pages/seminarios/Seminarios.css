@@ -1,5 +1,9 @@
 /* Contenedor principal de Seminarios */
 .seminarios-container {
+  background-image: url('/images/fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 60px 20px;
   max-width: 1200px;
   margin: 0 auto;

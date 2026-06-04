@@ -6,6 +6,8 @@ import Servicios from './pages/servicios/Servicios.jsx';
 import Titeres from './pages/titeres/titeres.jsx';
 import Obras from './pages/obras/Obras.jsx';
 import Seminarios from './pages/seminarios/Seminarios.jsx';
+import Contacto from './pages/contacto/Contacto.jsx';
+
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
           <Route path="titeres" element={<Titeres />} />
           <Route path="obras" element={<Obras />} />
           <Route path="seminarios" element={<Seminarios />} />
+          <Route path="contacto" element={<Contacto />} />
         </Route>
       </Routes>
     </Router>
