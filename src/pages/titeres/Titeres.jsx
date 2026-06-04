@@ -17,8 +17,7 @@ const Titeres = () => {
 
     return(
         <div className="titeres-container">
-            <h1>Construccion de Titeres</h1>
-            <p></p>
+        
             <img src = '/images/titeres1.jpg' alt='Titeres 1' className = "titeres-img"/>
             <img src = '/images/titeres2.jpg' alt='Titeres 2' className = "titeres-img"/>
             <img src = '/images/titeres3.jpg' alt='Titeres 3' className = "titeres-img"/>

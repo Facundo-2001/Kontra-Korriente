@@ -13,8 +13,7 @@ const Obras = () => {
 
     return (
     <div className="obras-container">
-        <h1>Obras</h1>
-        <p></p>
+    
          <img src = '/images/show1.jpg' alt='Obra 1' className = "obras-img"/>
          <img src = '/images/show2.jpg' alt='Obra 2' className = "obras-img"/>
          <img src = '/images/show3.jpg' alt='Obra 3' className = "obras-img"/>

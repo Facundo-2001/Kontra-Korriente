@@ -15,7 +15,7 @@ const Seminarios = () => {
 
 return(
     <div className="seminarios-container">
-        <h1>Seminarios</h1>
+
         <h2>Teatro Lambe Lambe</h2>
         <img src = '/images/CajaLambde.jpg' alt='Seminario 1' className = "seminarios-img"/>
         <img src = '/images/TeatroLambe.jpg' alt='Seminario 2' className = "seminarios-img"/>
