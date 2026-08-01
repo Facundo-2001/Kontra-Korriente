@@ -50,3 +50,8 @@
   justify-content: center;
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  .obras-container { padding: 40px 15px; }
+  .obras-container h1 { font-size: 2.2rem; margin-bottom: 20px; }
+}

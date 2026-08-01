@@ -60,3 +60,8 @@
   justify-content: center;
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  .seminarios-container { padding: 40px 15px; }
+  .seminarios-container h1 { font-size: 2.2rem; }
+}

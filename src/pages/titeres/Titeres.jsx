@@ -24,6 +24,8 @@ const Titeres = () => {
             <img src = '/images/titeres7.jpg' alt='Titeres 4' className = "titeres-img"/>
             <img src = '/images/titeres8.jpg' alt='Titeres 5' className = "titeres-img"/>
             <img src = '/images/titeres9.jpg' alt='Titeres 6' className = "titeres-img"/>
+            <img src = '/images/titere10.jpeg' alt='Titere 7' className = "titeres-img"/>
+            <img src = '/images/titere11.jpeg' alt='Titere 8' className = "titeres-img"/>
             <p> Pedi tu Titere Personalizado!</p>
             <div className="volver-btn-container">
                 <Boton
