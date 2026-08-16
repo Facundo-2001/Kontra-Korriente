@@ -20,6 +20,10 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
+.seminarios-container h2 {
+  color: #000000;
+}
+
 /* Estilo del texto descriptivo vacío (para cuando decidas completarlo) */
 .seminarios-container p {
   font-size: 1.2rem;
